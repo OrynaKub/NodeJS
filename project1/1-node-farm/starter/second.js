@@ -1,5 +1,8 @@
 const fs = require('fs');
 fs.readFile('./txt/start.txt','utf-8',  (err, data1) => {
+	if(err) return console.log("ERROR 🤯💣");
+		// to open emogis panel control + commande + space
+
 	fs.readFile(`./txt/${data1}.txt`, 'utf-8', (err, data2) => {
 		console.log(data2);
 	
@@ -14,6 +17,8 @@ fs.readFile('./txt/start.txt','utf-8',  (err, data1) => {
 });
 
 console.log('Will read File!');
+
+
 
 //Node.js will read the file and will continuer the execution anyways , so it's
 // not going to block code after the second line
