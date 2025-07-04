@@ -1,5 +1,4 @@
 const fs = require('fs');
-
 const http = require('http');
 
 
@@ -11,8 +10,15 @@ const url = require('url');
 // 1. create a server 
 // 2. start the server
 
+//synchronose version -> can be use right away
+
+const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, 'utf-8');
+const dataObj = JSON.parse(data);
+
 // res - dealing with the repons , we need to save the res on the var
 //execute each time when the req is send
+
+//execute every single time when the new request 
 const server = http.createServer((req, res) => {
     //console.log(req);
     //console.log(req.url); -> can be deleted when we are implementing a router
@@ -20,19 +26,15 @@ const server = http.createServer((req, res) => {
     //implementing a router 
 
     const pathName = req.url;
-
-    if(pathName === '/' || pathName === '/overview') {
+    
+    if (pathName === '/' || pathName === '/overview') {
         // res.end -> response.end() - to conclude the response without including any data
         res.end("This is the OVERVIEW!");
     }else if(pathName === '/product') {
         res.end("This is the PRODUCT");
     }else if (pathName === '/api')  {
-
-        fs.readFile('${__dirname}/dev-data/data.json', 'utf-8', (err, data) => {
-        const productData = JSON.parse(data);
-        console.log(productData);
-    })
-        res.end('API');
+        res.writeHead(200, { 'Content-type': 'application/json'});
+        res.end(data);
     } else {
         res.writeHead(404, {
             //need to specifia a http header, must be set up before the respond
