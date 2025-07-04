@@ -1,2 +1,0 @@
-This is what we know about the avocade : ${textIn}. 
-Created on ${Date.now()} 
