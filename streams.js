@@ -17,7 +17,7 @@ server.on('request', (req, res) => {
   });
   readable.errored('error', (err) => {
     console.log(err);
-    res.statusCode = 500;
+    res.statusCode = 500; // status code for the error
     res.end('File not found!');
   });
 });
