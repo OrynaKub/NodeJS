@@ -1,1 +1,53 @@
-#Introduction to Back-End Web Development and introduction to Node.js
+# 🌐 Introduction to Back-End Web Development and Node.js
+
+Welcome to the **Introduction to Back-End Web Development and Node.js** repository!  
+This project serves as a beginner-friendly guide to the core principles of server-side development, with a strong emphasis on using **Node.js**.
+
+Whether you're a front-end developer looking to expand your skill set, or a complete newcomer to web development, this repository aims to demystify the back-end and help you build a solid foundation in modern server-side programming.
+
+---
+
+## 📘 What You Will Learn
+
+This introductory guide covers essential back-end development topics, including:
+
+- **Understanding Back-End Concepts**  
+  What is back-end development? How does it differ from front-end development?
+
+- **The Client-Server Model**  
+  Learn how clients (browsers) and servers communicate over the web.
+
+- **Introduction to Node.js**  
+  Understand what Node.js is and why it's a powerful tool for back-end development.
+
+- **JavaScript on the Server**  
+  See how JavaScript, once limited to browsers, is now used on the server via Node.js.
+
+- **Event-Driven Architecture**  
+  Explore how Node.js handles asynchronous operations with non-blocking I/O.
+
+- **NPM (Node Package Manager)**  
+  Get familiar with managing packages and dependencies in Node.js projects.
+
+- **Basic Server Setup**  
+  Build a simple HTTP server using Node.js.
+
+- **Routing Fundamentals**  
+  Handle different URL paths and requests in your Node.js server.
+
+---
+
+## 🛠️ Prerequisites
+
+Before getting started, you should have:
+
+- A basic understanding of **HTML**, **CSS**, and **JavaScript**.
+- Some experience using the **command line/terminal**.
+- A **text editor** (e.g., [VS Code](https://code.visualstudio.com/), Sublime Text, etc.).
+- **Node.js** and **NPM** installed on your machine.  
+  > 📥 You can download them from the [official Node.js website](https://nodejs.org/).
+
+---
+
+
+
