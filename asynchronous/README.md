@@ -7,3 +7,5 @@ Description :  Adding some notes for third part  - javascript asyn.
 - `npm install superagent` — if Superagent is not installed yet
 
 - `npm init` — to initialize your project (create a package.json file)
+
+# ❌ Never adding node_modules to git 
