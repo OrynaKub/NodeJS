@@ -29,7 +29,7 @@ readFilePro(`${__dirname}/dog.txt`)
     return writeFilePro('dog-image.txt', res.body.message);
   })
   .then(() => {
-    console.log('Randome dog image saved to file!');
+    console.log('Randome dog image saved to file! ✅');
   })
   .catch((err) => {
     console.log(err.message);
