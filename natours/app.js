@@ -23,8 +23,7 @@ const tours = JSON.parse(
   fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`)
 );
 
-//always specifia the version of the API
-app.get('/api/v1/tours', (req, res) => {
+const getAllTours = (req, res) => {
   res.status(200).json({
     results: tours.length,
     status: 'success',
@@ -32,9 +31,9 @@ app.get('/api/v1/tours', (req, res) => {
       tours,
     },
   });
-});
+};
 
-app.get('/api/v1/tours/:id', (req, res) => {
+const getTour = (req, res) => {
   console.log(req.params);
   const id = req.params.id * 1;
   const tour = tours.find((el) => el.id === id);
@@ -52,10 +51,9 @@ app.get('/api/v1/tours/:id', (req, res) => {
       tour,
     },
   });
-});
+};
 
-//create a new tour
-app.post('/api/v1/tours', (req, res) => {
+const createTour = (req, res) => {
   //console.log(req.body);
 
   const newId = tours[tours.length - 1].id + 1;
@@ -75,9 +73,9 @@ app.post('/api/v1/tours', (req, res) => {
     }
   );
   //res.send('Done');
-});
+};
 
-app.patch('/api/v1/tours/:id', (req, res) => {
+const updateTour = (req, res) => {
   if (req.params.id * 1 > tours.length) {
     return res.status(400).json({
       status: 'fail',
@@ -91,9 +89,9 @@ app.patch('/api/v1/tours/:id', (req, res) => {
       tour: '<UpDated tour here...>',
     },
   });
-});
+};
 
-app.delete('/api/v1/tours/:id', (req, res) => {
+const deleteTour = (req, res) => {
   if (req.params.id * 1 > tours.length) {
     return res.status(400).json({
       status: 'fail',
@@ -107,7 +105,23 @@ app.delete('/api/v1/tours/:id', (req, res) => {
       tour: null, //resource no longer existe
     },
   });
-});
+};
+
+//always specifia the version of the API
+//app.get('/api/v1/tours', getAllTours);
+//app.get('/api/v1/tours/:id', getTour);
+//create a new tour
+//app.post('/api/v1/tours', createTour);
+//app.patch('/api/v1/tours/:id', updateTour);
+//app.delete('/api/v1/tours/:id', deleteTour);
+
+app.route('/api/v1/tours').get(getAllTours).post(createTour);
+
+app
+  .route('/api/v1/tours/:id')
+  .get(getTour)
+  .patch(updateTour)
+  .delete(deleteTour);
 
 const port = 3000;
 app.listen(port, () => {
